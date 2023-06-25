@@ -1,0 +1,261 @@
+#container_principal{
+   
+}
+
+#mano_izq{
+    width: 460px;
+    height: 600px;
+    border: 1px solid black;
+    position: relative;
+
+
+
+}
+.nota{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+
+}
+#toggle_cont{
+    display: flex;
+    width: 200px;
+    align-items: center;
+    height: 50px;
+    
+    flex-direction: row;
+}
+.rojo{
+    background-color: red;
+}
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    background-color: #d88989;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch input[type="checkbox"] + label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #4746c3;
+    border-radius: 15px;
+    transition: transform 0.1s;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + label {
+    transform: translateX(100%);
+  }
+#notasIzqA{
+    background-image: url(/imagenes/escalaMizqAbriendo.jpg);
+    height: 120px;
+    margin-top: 20px;
+    width: 102%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#i_1{
+    left: 39%;
+    top: 18%
+}
+
+#i_2{
+    left: 30%;
+    top: 24%
+}
+ 
+#i_3{
+    left: 60%;
+    top: 16%;
+}
+
+
+
+#i_4{
+    left: 52%;
+    top: 20%;
+}
+
+#i_5{
+left: 45%;
+top: 24%;
+
+}
+
+#i_6{
+    left: 37%;
+    top: 29%;
+
+}
+#i_7{
+    left: 28%;
+    top: 34%;
+
+
+}
+#i_8{
+    left: 58%;
+    top: 25%;
+
+
+}
+
+#i_9{
+    left: 51%;
+    top:29%;
+
+
+}
+
+#i_10{
+    left: 43%;
+    top: 34%;
+
+
+}
+#i_11{
+    left: 35%;
+    top: 39%;
+
+
+}
+#i_12{
+    left: 27%;
+    top: 44%;
+
+
+}
+#i_13{
+    left: 58%;
+    top: 35%;
+
+
+}
+#i_14{
+    left: 50%;
+    top: 40%;
+
+
+}
+#i_15{
+    left: 43%;
+    top: 45%;
+
+
+}
+#i_16{
+    left: 35%;
+    top: 50%;
+
+
+}
+#i_17{
+    left: 27%;
+    top: 55%;
+
+}
+
+#i_18{
+    left: 57%;
+    top: 45%;
+
+
+}
+#i_19{
+    left: 50%;
+    top: 51%;
+
+
+}
+#i_20{
+    left: 42%;
+    top: 56%;
+
+
+}
+#i_21{
+    left: 34%;
+    top: 62%;
+
+
+}
+#i_22{
+    left: 27%;
+    top: 67%;
+
+
+}
+#i_23{
+    left: 58%;
+    top: 56%;
+
+
+}
+#i_24{
+    left: 50%;
+    top: 61%;
+
+
+}#i_25{
+    left: 42%;
+    top: 67%;
+
+
+}#i_26{
+    left: 34%;
+    top: 73%;
+
+
+}#i_27{
+    left: 59%;
+    top: 65%;
+
+
+}#i_28{
+    left: 52%;
+    top: 70%;
+
+
+}#i_29{
+    left: 44%;
+    top: 75%;
+
+
+}#i_30{
+    left: 37%;
+    top: 81%;
+
+
+}#i_31{
+    left: 61%;
+    top: 74%;
+
+
+}#i_32{
+    left: 53%;
+    top: 80%;
+
+
+}
+#i_33{
+    left: 63%;
+    top: 82%;
+
+
+}
