@@ -31,10 +31,6 @@ function CapturarNotaDer(ev){
     
   } 
 
-
-
-
-
 }
 
 
@@ -51,7 +47,17 @@ function CapturarNotaIzq(ev){
   
   if (notaSeleccionada !=="") {
     let IdNota=encontrarIdDelDivNota(notaSeleccionada,"i");
+
+
     if (IdNota!=""){
+      if (IdNota[0]==="i_31" && IdNota[1]==="Mi"){   //si la nota es el mi que está dos veces
+        document.getElementById("i_31").classList.add("rojo")
+        document.getElementById("i_31").innerText="Mi";
+        document.getElementById("i_28").classList.add("rojo")
+        document.getElementById("i_28").innerText="Mi";
+        return;
+
+      }
       
      document.getElementById(IdNota[0]).classList.add("rojo")
      document.getElementById(IdNota[0]).innerText=IdNota[1];
@@ -155,7 +161,7 @@ const PosicionesDivManoIzquierda= [
     ["DH3","Re#","i_16","i_12"],
     ["E3","Mi","i_32","i_31"],
     ["F3","Fa","i_7","i_13"],
-    ["FH3","Fa#","i_13","i_5"],//fijarse que hago porque hay dos mi 
+    ["FH3","Fa#","i_13","i_5"],
     ["G3","Sol","i_21","i_25"],
     ["GH3","Sol#","i_28","i_9"],
     ["A3","La","i_25","i_24"],

@@ -10,14 +10,18 @@ body{
     flex-direction: row;
     margin: 0 auto;
     width: fit-content;
+    text-align: center;
+    color: white;
 }
 #mano_izq{
     width: 460px;
     height: 600px;
-    border: 1px solid black;
+   
     position: relative;
-    background-image: url(/imagenes/maderaBand.jpg);
-    background-size: cover;
+    background-image: url(/imagenes/image141.png);
+    background-size: 87%;
+    background-position-x: 56px;
+    background-repeat: no-repeat;
 
 
 
@@ -25,11 +29,14 @@ body{
 #mano_der{
      width: 460px;
     height: 600px;
-    border: 1px solid black;
+
     position: relative;
-    background-image: url(/imagenes/maderaBand.jpg);
-    background-size: cover;
-    
+    background-image: url(/imagenes/image140.png);
+   
+    background-size: 87%;
+    background-position-x: 0px;
+    background-repeat: no-repeat;
+
  
 }
 
