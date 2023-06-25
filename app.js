@@ -1,25 +1,58 @@
 let  notas_izq_Abriendo = document.getElementById("notasIzqA");
+let notasDer=document.getElementById("notasDer")
+notasDer.addEventListener("click",CapturarNotaDer);
 notas_izq_Abriendo.addEventListener("click", CapturarNotaIzq);
 let DivManoIzq=document.getElementById("mano_izq")
+let DivManoDer=document.getElementById("mano_der")
 let notasManoIzq=DivManoIzq.querySelectorAll(".nota")
+let notasManoDer=DivManoDer.querySelectorAll(".nota")
 
 
 
+function CapturarNotaDer(ev){
 
-function CapturarNotaIzq(ev){
-  let notasPintadas=document.querySelectorAll(".rojo")
+  let notasPintadas=DivManoDer.querySelectorAll(".rojo")
   notasPintadas.forEach(el=>{
     el.classList.remove("rojo");
     el.innerText="";
   })
   var x = ev.clientX - ev.target.offsetLeft;
-  var y = ev.clientY - ev.target.offsetTop;
   
-  let notaSeleccionada=retornarNota(x)
+  
+  let notaSeleccionada=retornarNota("d",x)
+  if (notaSeleccionada !=="") {
+    let IdNota=encontrarIdDelDivNota(notaSeleccionada,"d");
+    if (IdNota!=""){
+      
+     document.getElementById(IdNota[0]).classList.add("rojo")
+     document.getElementById(IdNota[0]).innerText=IdNota[1];
+
+    }
+    
+  } 
+
+
+
+
+
+}
+
+
+function CapturarNotaIzq(ev){
+  let notasPintadas=DivManoIzq.querySelectorAll(".rojo")
+  notasPintadas.forEach(el=>{
+    el.classList.remove("rojo");
+    el.innerText="";
+  })
+  var x = ev.clientX - ev.target.offsetLeft;
+  
+ 
+  let notaSeleccionada=retornarNota("i",x)
   
   if (notaSeleccionada !=="") {
-    let IdNota=encontrarIdDelDivNota(notaSeleccionada);
+    let IdNota=encontrarIdDelDivNota(notaSeleccionada,"i");
     if (IdNota!=""){
+      
      document.getElementById(IdNota[0]).classList.add("rojo")
      document.getElementById(IdNota[0]).innerText=IdNota[1];
 
@@ -32,29 +65,68 @@ function CapturarNotaIzq(ev){
 
 
 
-function retornarNota(x){ //retorna el nombre de la nota seleccionada en la partitura
-  for (let key in posicionesPentagrama){
-    if (posicionesPentagrama[key][0]<x && posicionesPentagrama[key][1]>x){
-       return(key) 
-    }
-  }return "";
+function retornarNota(izq_der,x){ //retorna el nombre de la nota seleccionada en la partitura
+  if(izq_der==="i"){
+    for (let key in posPentagramaIzq){
+      if (posPentagramaIzq[key][0]<x && posPentagramaIzq[key][1]>x){
+        
+         return(key) 
+      }
+    }return "";
+  }else{
+    for (let key in posPentagramaDer){
+      if (posPentagramaDer[key][0]<x && posPentagramaDer[key][1]>x){
+       
+         return(key) 
+      }
+    }return "";
+
+
+
+
+  }
+  
 }
 
-function encontrarIdDelDivNota(nota){
+function encontrarIdDelDivNota(nota,izq_der){
   let aux;
   let notaParaMostrar=[];//acá guardo el id del div (indice 0) y el texto para mostrar(indice 1)
   let TogleButton=document.getElementById("toggle");
   if (TogleButton.checked){ //si está chequeado (cerrando) el valor de X es 3 (que va a ser el subindice de donde obtiene el id del div)
     aux=3;
   }else {aux=2}
-  for (let i=0;i<PosicionesDivManoIzquierda.length-1;i++){
-    if (PosicionesDivManoIzquierda[i][0]===nota && PosicionesDivManoIzquierda[i][aux] !==""){
-      notaParaMostrar.push(PosicionesDivManoIzquierda[i][aux]);
-      notaParaMostrar.push(PosicionesDivManoIzquierda[i][1]);
-      return notaParaMostrar
-    }
+  if(izq_der==="i"){
+    for (let i=0;i<PosicionesDivManoIzquierda.length;i++){
+      if (PosicionesDivManoIzquierda[i][0]===nota && PosicionesDivManoIzquierda[i][aux] !==""){
+        notaParaMostrar.push(PosicionesDivManoIzquierda[i][aux]);
+        notaParaMostrar.push(PosicionesDivManoIzquierda[i][1]);
+        return notaParaMostrar
+      }
+  
+    }return"";
 
-  }return"";
+
+
+
+
+  }else{
+    for (let i=0;i<PosicionesDivManoDerecha.length;i++){
+      if (PosicionesDivManoDerecha[i][0]===nota && PosicionesDivManoDerecha[i][aux] !==""){
+        notaParaMostrar.push(PosicionesDivManoDerecha[i][aux]);
+        notaParaMostrar.push(PosicionesDivManoDerecha[i][1]);
+        return notaParaMostrar
+      }
+  
+    }return"";
+
+
+
+
+
+
+
+  }
+  
  
     
  
@@ -100,13 +172,13 @@ const PosicionesDivManoIzquierda= [
     ["G4","Sol","i_27","i_2"],
     ["GH4","Sol#","i_2","i_23"],
     ["A4","La","i_23",""],
-    ["AH4","La#","i_14",""]
+    ["AH4","La#","i_14",""],
     ["B4","Si","","i_18"]
 
 
 ]
 
-const posicionesPentagrama={
+const posPentagramaIzq={
 
     "C2":[52,68],
     "CH2":[85,95],
@@ -144,11 +216,104 @@ const posicionesPentagrama={
     "G4":[859,879],
     "GH4":[886,906],
     "A4":[912,930],
-    "B4":[935,956]
+    "B4":[935,956],
 
+
+}
+const posPentagramaDer={ 
+  "A3":[28,75],
+  "AH3":[81,103],
+  "B3":[108,125],
+  "C4":[129,148],
+  "CH4":[157,175],
+  "D4":[178,198],
+  "DH4":[199,222],
+  "E4":[225,242],
+  "F4":[243,262],
+  "FH4":[270,288],
+  "G4":[291,309],
+  "GH4":[314,334],
+
+  "A4":[346,365],
+  "AH4":[372,392],
+  "B4":[396,412],
+  "C5":[416,432],
+  "CH5":[440,460],
+  "D5":[462,480],
+  "DH5":[485,506],
+  "E5":[510,529],
+  "F5":[531,549],
+  "FH5":[554,576],
+  "G5":[580,598],
+  "GH5":[602,626],
+
+  "A5":[636,660],
+  "AH5":[665,685],
+  "B5":[690,706],
+  "C6":[710,728],
+  "CH6":[733,754],
+  "D6":[759,775],
+  "DH6":[780,802],
+  "E6":[806,825],
+  "F6":[828,848],
+  "FH6":[852,873],
+  "G6":[876,895],
+  "GH6":[902,922],
+  "A6":[926,943],
+  
+  "B6":[946,965],
+  
 
 
 
 
 
 }
+const PosicionesDivManoDerecha= [
+  ["A3", "La","d1","d1"] ,
+  ["AH3","La#","d2","d2"] , 
+  ["B3", "Si","d3","d3"],
+  ["C4", "Do","d6","d10"],
+  ["CH4","Do#","d10","d11"],
+  ["D4", "Re","d11","d6"],
+  ["DH4","Re#","d5","d5"],
+  ["E4", "Mi","d7","d8"],
+  ["F4", "Fa","d4","d4"],
+  ["FH4","Fa#","d18","d7"],
+  ["G4", "Sol","d17","d18"],
+  ["GH4","Sol#","d13","d17"],
+  ["A4", "La","d24","d13"],
+  ["AH4","La#","d8","d23"],
+  ["B4", "Si","d19","d24"],
+  ["C5", "Do","d30","d29"],
+  ["CH5","Do#","d12","d19"],
+  ["D5", "Re","d25","d30"],
+  ["DH5","Re#","d14","d38"],
+  ["E5", "Mi","d36","d14"],
+  ["F5", "Fa","d9","d9"],
+  ["FH5","Fa#","d20","d12"],
+  ["G5", "Sol","d38","d36"],
+  ["GH5","Sol#","d31","d20"],
+
+  ["A5", "La","d26","d31"],
+  ["AH5","La#","d23","d22"],
+  ["B5", "Si","d37","d26"],
+  ["C6","Do","d29","d28"],
+  ["CH6","Do#","d32","d37"],
+  ["D6","Re","d35","d35"],
+  ["DH6","Re#","d34","d34"],
+  ["E6","Mi","d28","d32"],
+  ["F6","Fa","d33","d33"],
+  ["FH6","Fa#","d22","d27"],
+  ["G6","Sol","d27","d16"],
+  ["GH6","Sol#","d21","d21"],
+  ["A6","La","d16","d15"],
+  ["B6","Si","d15",""],
+
+
+  
+
+
+]
+
+
