@@ -18,7 +18,7 @@ body{
     height: 600px;
    
     position: relative;
-    background-image: url(/imagenes/image141.png);
+    background-image: url(/imagenes/izqconborde.png);
     background-size: 87%;
     background-position-x: 56px;
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body{
     height: 600px;
 
     position: relative;
-    background-image: url(/imagenes/image140.png);
+    background-image: url(/imagenes/der\ \ con\ borde.png);
    
     background-size: 87%;
     background-position-x: 0px;
@@ -68,33 +68,18 @@ body{
 .rojo{
     background-color: red;
 }
-.toggle-switch {
-    width: 60px;
-    height: 30px;
-    position: relative;
-    background-color: #d88989;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  .toggle-switch input[type="checkbox"] {
-    display: none;
-  }
-  
-  .toggle-switch input[type="checkbox"] + label {
+
+#ab_cerr{
+    background-color: beige;
+    margin: 0 auto;
+
+
+}
+#cont_button{
+
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: #4746c3;
-    border-radius: 15px;
-    transition: transform 0.1s;
-  }
-  
-  .toggle-switch input[type="checkbox"]:checked + label {
-    transform: translateX(100%);
-  }
+    text-align: center;
+}
 #notasIzqA{
     background-image: url(/imagenes/escalaMizqAbriendo.jpg);
     height: 120px;

@@ -6,6 +6,25 @@ let DivManoIzq=document.getElementById("mano_izq")
 let DivManoDer=document.getElementById("mano_der")
 let notasManoIzq=DivManoIzq.querySelectorAll(".nota")
 let notasManoDer=DivManoDer.querySelectorAll(".nota")
+let abriendo=true;
+const boton_abrirCerrar=document.getElementById("ab_cerr");
+
+
+
+
+boton_abrirCerrar.addEventListener("click", ()=>{
+  abriendo=!abriendo
+  if (abriendo){
+    boton_abrirCerrar.innerText="Abriendo"
+
+  }else{
+    boton_abrirCerrar.innerText="Cerrando"
+  }
+  
+
+
+
+})
 
 
 
@@ -97,8 +116,8 @@ function retornarNota(izq_der,x){ //retorna el nombre de la nota seleccionada en
 function encontrarIdDelDivNota(nota,izq_der){
   let aux;
   let notaParaMostrar=[];//acá guardo el id del div (indice 0) y el texto para mostrar(indice 1)
-  let TogleButton=document.getElementById("toggle");
-  if (TogleButton.checked){ //si está chequeado (cerrando) el valor de X es 3 (que va a ser el subindice de donde obtiene el id del div)
+  
+  if (!abriendo){ //si está chequeado (cerrando) el valor de X es 3 (que va a ser el subindice de donde obtiene el id del div)
     aux=3;
   }else {aux=2}
   if(izq_der==="i"){
@@ -187,7 +206,7 @@ const PosicionesDivManoIzquierda= [
 const posPentagramaIzq={
 
     "C2":[52,68],
-    "CH2":[85,95],
+    "CH2":[75,95],
     "D2": [98,118],
     "DH2":[132,148],
     "E2":[158,172],
