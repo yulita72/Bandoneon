@@ -1,6 +1,7 @@
 body{
     display: flex;
     justify-content: center;
+    background-color: bisque;
 }
 #container_principal{
    
@@ -104,17 +105,17 @@ body{
 
 
 #i_1{
-    left: 39%;
-    top: 18%
+    left: 38%;
+    top: 17%
 }
 
 #i_2{
-    left: 30%;
-    top: 24%
+    left: 29%;
+    top: 21%
 }
  
 #i_3{
-    left: 60%;
+    left: 61%;
     top: 16%;
 }
 
@@ -126,169 +127,169 @@ body{
 }
 
 #i_5{
-left: 45%;
-top: 24%;
+left: 44%;
+top: 23%;
 
 }
 
 #i_6{
-    left: 37%;
-    top: 29%;
+    left: 36%;
+    top: 27%;
 
 }
 #i_7{
     left: 28%;
-    top: 34%;
+    top: 30%;
 
 
 }
 #i_8{
     left: 58%;
-    top: 25%;
+    top: 26%;
 
 
 }
 
 #i_9{
-    left: 51%;
+    left: 50%;
     top:29%;
 
 
 }
 
 #i_10{
-    left: 43%;
-    top: 34%;
+    left: 42%;
+    top: 33%;
 
 
 }
 #i_11{
-    left: 35%;
-    top: 39%;
+    left: 34%;
+    top: 37%;
 
 
 }
 #i_12{
     left: 27%;
-    top: 44%;
+    top: 42%;
 
 
 }
 #i_13{
-    left: 58%;
+    left: 57%;
     top: 35%;
 
 
 }
 #i_14{
-    left: 50%;
-    top: 40%;
+    left: 49%;
+    top: 39%;
 
 
 }
 #i_15{
-    left: 43%;
-    top: 45%;
+    left: 41%;
+    top: 43%;
 
 
 }
 #i_16{
-    left: 35%;
-    top: 50%;
+    left: 34%;
+    top: 48%;
 
 
 }
 #i_17{
     left: 27%;
-    top: 55%;
+    top: 53%;
 
 }
 
 #i_18{
-    left: 57%;
-    top: 45%;
+    left: 56%;
+    top: 44%;
 
 
 }
 #i_19{
-    left: 50%;
-    top: 51%;
+    left: 49%;
+    top: 49%;
 
 
 }
 #i_20{
-    left: 42%;
-    top: 56%;
+    left: 41%;
+    top: 53%;
 
 
 }
 #i_21{
-    left: 34%;
-    top: 62%;
+    left: 35%;
+    top: 58%;
 
 
 }
 #i_22{
-    left: 27%;
-    top: 67%;
+    left: 28%;
+    top: 63%;
 
 
 }
 #i_23{
-    left: 58%;
-    top: 56%;
+    left: 57%;
+    top: 54%;
 
 
 }
 #i_24{
     left: 50%;
-    top: 61%;
+    top: 59%;
 
 
 }#i_25{
-    left: 42%;
-    top: 67%;
+    left: 43%;
+    top: 63%;
 
 
 }#i_26{
-    left: 34%;
-    top: 73%;
+    left: 36%;
+    top: 68%;
 
 
 }#i_27{
     left: 59%;
-    top: 65%;
+    top: 64%;
 
 
 }#i_28{
     left: 52%;
-    top: 70%;
+    top: 68%;
 
 
 }#i_29{
-    left: 44%;
-    top: 75%;
+    left: 45%;
+    top: 73%;
 
 
 }#i_30{
-    left: 37%;
-    top: 81%;
+    left: 38%;
+    top: 77%;
 
 
 }#i_31{
-    left: 61%;
-    top: 74%;
+    left: 62%;
+    top: 73%;
 
 
 }#i_32{
-    left: 53%;
-    top: 80%;
+    left: 54%;
+    top: 77%;
 
 
 }
 #i_33{
-    left: 63%;
-    top: 82%;
+    left: 65%;
+    top: 81%;
 
 
 }
