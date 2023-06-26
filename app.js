@@ -6,10 +6,30 @@ let DivManoIzq=document.getElementById("mano_izq")
 let DivManoDer=document.getElementById("mano_der")
 let notasManoIzq=DivManoIzq.querySelectorAll(".nota")
 let notasManoDer=DivManoDer.querySelectorAll(".nota")
+let cifrado=false;
 let abriendo=true;
 const boton_abrirCerrar=document.getElementById("ab_cerr");
+const boton_cifrado_activado=document.getElementById("cifrado_activado")
+boton_cifrado_activado.style.opacity="0.5"
+const boton_cifrado_desact=document.getElementById("cifrado_desactivado")
+
+boton_cifrado_activado.addEventListener("click",()=>{
+
+cifrado=true;
+boton_cifrado_desact.style.opacity=".5"
+boton_cifrado_activado.style.opacity="1"
 
 
+})
+
+boton_cifrado_desact.addEventListener("click",()=>{
+
+  cifrado=false;
+  boton_cifrado_activado.style.opacity=".5"
+  boton_cifrado_desact.style.opacity="1"
+  
+  
+  })
 
 
 boton_abrirCerrar.addEventListener("click", ()=>{
@@ -29,6 +49,7 @@ boton_abrirCerrar.addEventListener("click", ()=>{
 
 
 function CapturarNotaDer(ev){
+ 
 
   let notasPintadas=DivManoDer.querySelectorAll(".rojo")
   notasPintadas.forEach(el=>{
@@ -41,11 +62,18 @@ function CapturarNotaDer(ev){
   let notaSeleccionada=retornarNota("d",x)
   if (notaSeleccionada !=="") {
     let IdNota=encontrarIdDelDivNota(notaSeleccionada,"d");
+
+
     if (IdNota!=""){
       
      document.getElementById(IdNota[0]).classList.add("rojo")
-     document.getElementById(IdNota[0]).innerText=IdNota[1];
+     if(cifrado){let notaEnCifrado=traducir_a_cifrado(IdNota[1])
+      document.getElementById(IdNota[0]).innerText=notaEnCifrado;
+     }else{
+      document.getElementById(IdNota[0]).innerText=IdNota[1];
 
+     }
+     
     }
     
   } 
@@ -69,17 +97,37 @@ function CapturarNotaIzq(ev){
 
 
     if (IdNota!=""){
-      if (IdNota[0]==="i_31" && IdNota[1]==="Mi"){   //si la nota es el mi que está dos veces
-        document.getElementById("i_31").classList.add("rojo")
-        document.getElementById("i_31").innerText="Mi";
-        document.getElementById("i_28").classList.add("rojo")
-        document.getElementById("i_28").innerText="Mi";
-        return;
+
+      if(cifrado){
+        if (IdNota[0]==="i_31" && IdNota[1]==="Mi"){   //si la nota es el mi que está dos veces
+          document.getElementById("i_31").classList.add("rojo")
+          document.getElementById("i_31").innerText="E";
+          document.getElementById("i_28").classList.add("rojo")
+          document.getElementById("i_28").innerText="E";
+          return;
+  
+        }else{
+          let notaEnCifrado=traducir_a_cifrado(IdNota[1])
+          document.getElementById(IdNota[0]).classList.add("rojo")
+        document.getElementById(IdNota[0]).innerText=notaEnCifrado;
+        }
+      
+      }else{
+        if (IdNota[0]==="i_31" && IdNota[1]==="Mi"){   //si la nota es el mi que está dos veces
+          document.getElementById("i_31").classList.add("rojo")
+          document.getElementById("i_31").innerText="Mi";
+          document.getElementById("i_28").classList.add("rojo")
+          document.getElementById("i_28").innerText="Mi";
+          return;
+  
+        }
+        
+       document.getElementById(IdNota[0]).classList.add("rojo")
+       document.getElementById(IdNota[0]).innerText=IdNota[1];
 
       }
+
       
-     document.getElementById(IdNota[0]).classList.add("rojo")
-     document.getElementById(IdNota[0]).innerText=IdNota[1];
 
     }
     
@@ -125,10 +173,12 @@ function encontrarIdDelDivNota(nota,izq_der){
       if (PosicionesDivManoIzquierda[i][0]===nota && PosicionesDivManoIzquierda[i][aux] !==""){
         notaParaMostrar.push(PosicionesDivManoIzquierda[i][aux]);
         notaParaMostrar.push(PosicionesDivManoIzquierda[i][1]);
+        
         return notaParaMostrar
       }
   
-    }return"";
+    }No_disponible();
+    return"";
 
 
 
@@ -139,10 +189,12 @@ function encontrarIdDelDivNota(nota,izq_der){
       if (PosicionesDivManoDerecha[i][0]===nota && PosicionesDivManoDerecha[i][aux] !==""){
         notaParaMostrar.push(PosicionesDivManoDerecha[i][aux]);
         notaParaMostrar.push(PosicionesDivManoDerecha[i][1]);
+        
         return notaParaMostrar
       }
   
-    }return"";
+    }No_disponible();
+    return"";
 
 
 
@@ -157,7 +209,17 @@ function encontrarIdDelDivNota(nota,izq_der){
  
 
 }
+function No_disponible(){
+  let noDisponibleH1=document.getElementById("nota_no_encontrada")
+  noDisponibleH1.innerText="Nota no disponible";
+  setTimeout(()=>{
+    noDisponibleH1.innerText="";
+  }, 1000)
 
+
+
+
+}
 
 
 const PosicionesDivManoIzquierda= [
@@ -175,7 +237,7 @@ const PosicionesDivManoIzquierda= [
     ["B2","Si","i_31","i_4"],
 
     ["C3","Do","i_10","i_6"],
-    ["CH3","DO#","i_12","i_11"],
+    ["CH3","Do#","i_12","i_11"],
     ["D3","Re","i_29","i_26"],
     ["DH3","Re#","i_16","i_12"],
     ["E3","Mi","i_32","i_31"],
@@ -336,9 +398,44 @@ const PosicionesDivManoDerecha= [
   ["B6","Si","d15",""],
 
 
-  
-
 
 ]
 
+function traducir_a_cifrado(nota){
+
+
+
+  const Notas={
+   
+    "Do":"C",
+    "Do#":"C#",
+    "Re":"D",
+    "Re#":"D#",
+    
+    "Mi":"E",
+    "Fa":"F",
+    "Fa#":"F#",
+
+    "Sol":"G",
+    "Sol#":"G#",
+    "La":"A",
+    "La#":"A#",
+    
+
+
+    "Si":"B"
+  }
+
+
+  for (let X in Notas){
+    if(X===nota){
+      return Notas[X]
+    }
+
+
+
+  }
+
+
+}
 

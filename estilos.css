@@ -57,15 +57,25 @@ body{
 
 
 }
-#toggle_cont{
-    display: flex;
-    width: 200px;
-    align-items: center;
-    height: 50px;
-    
-    flex-direction: row;
-    margin: auto;
+#nota_no_encontrada{
+    position: absolute;
+    left: 20%;
+    top: 70%;
+    color: rgb(247, 248, 248);
+    z-index: 1;
+    background-color: black;
+
 }
+#cont_info{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
 .rojo{
     background-color: red;
 }
@@ -85,24 +95,27 @@ body{
     background-image: url(/imagenes/escalaMizqAbriendo.jpg);
     height: 120px;
     margin-top: 20px;
-    width: 82%;
-    background-size: cover;
+    width: 106%;
+    background-size: contain;
     background-repeat: no-repeat;
-    margin-left: 9%;
+    
 }
     
 #notasDer{
-    background-image: url(/imagenes/escalaManoder.jpg);
+    background-image: url(/imagenes/manoderrescambiada.png);
     height: 120px;
     margin-top: 20px;
-    width: 1200px;
-    background-position-y: center;
-    background-size: 981px;
+    width: 106%;
+    
+    background-size: contain;
     background-repeat: no-repeat;
-    margin-left: 9%;
+    
 }
 
-
+#pentagramas{
+    width: 100%;
+    height: auto;
+}
 
 #i_1{
     left: 38%;
