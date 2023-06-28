@@ -8,6 +8,7 @@ body{
    width: 90%;
     margin: 0 auto;
     min-width: 800px;
+    background-color: wheat;
 }
 #cont_teclados{
     display: flex;
@@ -22,7 +23,7 @@ body{
     color: white;
 }
 #mano_izq{
-    border: 1px solid black;
+   
     width: 50%;
     max-width: 530px;
     padding-bottom: 50%;
@@ -37,7 +38,7 @@ body{
 
 }
 #mano_der{
-    border: 1px solid black;
+ 
      width: 50%;
      max-width: 530px;
     padding-bottom: 50%;
@@ -78,6 +79,7 @@ body{
 
 }
 #cont_info{
+    display: none;
     position: absolute;
     width: 300px;
     height: auto;
