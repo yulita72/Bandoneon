@@ -12,6 +12,24 @@ const boton_abrirCerrar=document.getElementById("ab_cerr");
 const boton_cifrado_activado=document.getElementById("cifrado_activado")
 boton_cifrado_activado.style.opacity="0.5"
 const boton_cifrado_desact=document.getElementById("cifrado_desactivado")
+const divPentagramas=document.getElementById("pentagramas")
+const PentDerecha= document.getElementById("notasDer")
+//let DivOffset=PentDerecha.offsetLeft
+
+//capturar ancho de pentagrama para usarlo en el calculo de pixeles
+const AnchoPentagramaDefault=980;
+const Pentagrama=document.getElementById("notasDer");
+let anchoActualPentagrama=Pentagrama.clientWidth
+window.addEventListener("resize",()=>{
+   anchoActualPentagrama=Pentagrama.clientWidth
+   //DivOffset=divPentagramas.offsetLeft
+   console.log(anchoActualPentagrama)
+})
+
+
+divPentagramas.addEventListener("mouseenter",()=>{
+  divPentagramas.style.cursor="pointer"
+})
 
 boton_cifrado_activado.addEventListener("click",()=>{
 
@@ -57,6 +75,7 @@ function CapturarNotaDer(ev){
     el.innerText="";
   })
   var x = ev.clientX - ev.target.offsetLeft;
+ 
   
   
   let notaSeleccionada=retornarNota("d",x)
@@ -139,16 +158,25 @@ function CapturarNotaIzq(ev){
 
 
 function retornarNota(izq_der,x){ //retorna el nombre de la nota seleccionada en la partitura
+ //acá tengo que hacer el cálculo del tamaño actual del pentagrama
+  let coeficiente=AnchoPentagramaDefault/anchoActualPentagrama
+  console.log("coe "+coeficiente)
+  console.log(x)
+
+
   if(izq_der==="i"){
+       
+
     for (let key in posPentagramaIzq){
-      if (posPentagramaIzq[key][0]<x && posPentagramaIzq[key][1]>x){
+    
+      if ((posPentagramaIzq[key][0]/coeficiente)<x && (posPentagramaIzq[key][1]/coeficiente)>x){
         
          return(key) 
       }
     }return "";
   }else{
     for (let key in posPentagramaDer){
-      if (posPentagramaDer[key][0]<x && posPentagramaDer[key][1]>x){
+      if ((posPentagramaDer[key][0]/coeficiente)<x && (posPentagramaDer[key][1]/coeficiente)>x){
        
          return(key) 
       }
