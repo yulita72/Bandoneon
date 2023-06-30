@@ -1,4 +1,6 @@
-body{
+
+#div_notaActual{
+    text-align: center;
 
 }
 #container_principal{
@@ -104,7 +106,7 @@ body{
     display: block;
     text-align: center;
 }
-#notasIzqA{
+#notasIzq{
     background-image: url(/imagenes/escalaMizqAbriendo.jpg);
     height: 120px;
     margin-top: 20px;
@@ -463,7 +465,20 @@ top: 23%;
 .nota{
     width: 30px;
     height: 30px;
-}    
+}  
+#notasIzq{
+   
+    height: 100px;
+  
+}
+  
+#notasDer{
+   
+    height: 100px;
+  
+}
+  
+
 }
 
 

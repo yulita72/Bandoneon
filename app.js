@@ -1,7 +1,10 @@
-let  notas_izq_Abriendo = document.getElementById("notasIzqA");
+let  notasIzq = document.getElementById("notasIzq");
 let notasDer=document.getElementById("notasDer")
 notasDer.addEventListener("click",CapturarNotaDer);
-notas_izq_Abriendo.addEventListener("click", CapturarNotaIzq);
+notasIzq.addEventListener("click", CapturarNotaIzq);
+notasDer.addEventListener("mousemove",MostrarNotaDer);//muestra el nombre de la nota por donde pasa el mouse
+notasIzq.addEventListener("mousemove", MostrarNotaIzq);//muestra el nombre de la nota por donde pasa el mouse
+let DivNotaActual=document.getElementById("div_notaActual")
 let DivManoIzq=document.getElementById("mano_izq")
 let DivManoDer=document.getElementById("mano_der")
 let notasManoIzq=DivManoIzq.querySelectorAll(".nota")
@@ -63,8 +66,27 @@ boton_abrirCerrar.addEventListener("click", ()=>{
 
 
 })
+//muestra el nombre de la nota por donde pasa el mouse
+function MostrarNotaDer(ev){
+  var x = ev.clientX - ev.target.offsetLeft;
+  //DivNotaActual.innerText=x
+  let notaSeleccionada=retornarNota("d",x)
+  if (notaSeleccionada !=="") {
+    DivNotaActual.innerText=(notaSeleccionada)}
 
 
+
+}
+function MostrarNotaIzq(ev){
+  var x = ev.clientX - ev.target.offsetLeft;
+  //DivNotaActual.innerText=x
+  let notaSeleccionada=retornarNota("i",x)
+  if (notaSeleccionada !=="") {
+    DivNotaActual.innerText=(notaSeleccionada)}
+
+
+
+}
 
 function CapturarNotaDer(ev){
  
@@ -296,40 +318,40 @@ const PosicionesDivManoIzquierda= [
 const posPentagramaIzq={
 
     "C2":[52,68],
-    "CH2":[75,95],
+    "C#2":[75,95],
     "D2": [98,118],
-    "DH2":[132,148],
+    "D#2":[132,148],
     "E2":[158,172],
     "F2":[180,198],
-    "FH2":[205,223],
+    "F#2":[205,223],
     "G2":[229,247],
-    "GH2":[256,275],
+    "G#2":[256,275],
     "A2":[280,298],
-    "AH2":[305,326],
+    "A#2":[305,326],
     "B2":[330,354],
 
     "C3":[364,384],
-    "CH3":[392,409],
+    "C#3":[392,409],
     "D3":[413,434],
-    "DH3":[440,460],
+    "D#3":[440,460],
     "E3":[464,484],
     "F3":[487,507],
-    "FH3":[516,535],
+    "F#3":[516,535],
     "G3":[540,559],
-    "GH3":[565,588],
+    "G#3":[565,588],
     "A3":[592,610],
-    "AH3":[619,639],
+    "A#3":[619,639],
     "B3":[642,662],
 
     "C4":[680,700],
-    "CH4":[703,728],
+    "C#4":[703,728],
     "D4":[732,752],
-    "DH4":[757,780],
+    "D#4":[757,780],
     "E4":[783,804],
     "F4":[806,826],
-    "FH4":[830,855],
+    "F#4":[830,855],
     "G4":[859,879],
-    "GH4":[886,906],
+    "G#4":[886,906],
     "A4":[912,930],
     "B4":[935,956],
 
@@ -337,43 +359,43 @@ const posPentagramaIzq={
 }
 const posPentagramaDer={ 
   "A3":[28,75],
-  "AH3":[81,103],
+  "A#3":[81,103],
   "B3":[108,125],
   "C4":[129,148],
-  "CH4":[157,175],
+  "C#4":[157,175],
   "D4":[178,198],
-  "DH4":[199,222],
+  "D#4":[199,222],
   "E4":[225,242],
   "F4":[243,262],
-  "FH4":[270,288],
+  "F#4":[270,288],
   "G4":[291,309],
-  "GH4":[314,334],
+  "G#4":[314,334],
 
   "A4":[346,365],
-  "AH4":[372,392],
+  "A#4":[372,392],
   "B4":[396,412],
   "C5":[416,432],
-  "CH5":[440,460],
+  "C#5":[440,460],
   "D5":[462,480],
-  "DH5":[485,506],
+  "D#5":[485,506],
   "E5":[510,529],
   "F5":[531,549],
-  "FH5":[554,576],
+  "F#5":[554,576],
   "G5":[580,598],
-  "GH5":[602,626],
+  "G#5":[602,626],
 
   "A5":[636,660],
-  "AH5":[665,685],
+  "A#5":[665,685],
   "B5":[690,706],
   "C6":[710,728],
-  "CH6":[733,754],
+  "C#6":[733,754],
   "D6":[759,775],
-  "DH6":[780,802],
+  "D#6":[780,802],
   "E6":[806,825],
   "F6":[828,848],
-  "FH6":[852,873],
+  "F#6":[852,873],
   "G6":[876,895],
-  "GH6":[902,922],
+  "G#6":[902,922],
   "A6":[926,943],
   
   "B6":[946,965],
