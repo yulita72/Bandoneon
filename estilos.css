@@ -74,7 +74,7 @@
 #nota_no_encontrada{
     position: absolute;
     left: 45%;
-    top: 20%;
+    top: 50%;
     color: rgb(247, 248, 248);
     z-index: 1;
     background-color: black;
