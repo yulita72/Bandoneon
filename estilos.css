@@ -10,6 +10,7 @@
    width: 90%;
     margin: 0 auto;
     min-width: 800px;
+    height: 100vh;
     background-color: wheat;
 }
 #cont_teclados{
@@ -90,7 +91,14 @@
     text-align: center;
     border: 1px solid black;
 }
+#mano_izq h3{
 
+    margin-left: 25%;
+}
+#mano_der h3{
+
+    margin-right: 25%;
+}
 .rojo{
     background-color: red;
 }
