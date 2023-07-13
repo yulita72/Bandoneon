@@ -8,6 +8,7 @@
 }
 #div_notaActual{
     text-align: center;
+    height: 18px;
 
 }
 #container_principal{
@@ -77,9 +78,21 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+   
 
 
 }
+
+#mano_izq .nota{
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 1);
+
+}
+#mano_der .nota{
+    box-shadow: -4px 3px 1px rgba(0, 0, 0, 1);
+
+}
+
+
 #nota_no_encontrada{
     position: absolute;
     left: 45%;
@@ -156,6 +169,7 @@
     width: 55%;
     min-width: 650px;
     height: auto;
+    margin-bottom: 5px;
    
 }
 
