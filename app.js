@@ -7,6 +7,8 @@ const DivManoDer = document.getElementById("mano_der")
 const notasManoIzq = DivManoIzq.querySelectorAll(".nota")
 const notasManoDer = DivManoDer.querySelectorAll(".nota")
 const botonAcorde = document.getElementById("acorde");
+const botonAyuda=document.getElementById("boton_ayuda")
+
 notasDer.addEventListener("click", CapturarNotaDer);
 notasIzq.addEventListener("click", CapturarNotaIzq);
 notasDer.addEventListener("mousemove", MostrarNotaDer);//muestra el nombre de la nota por donde pasa el mouse
@@ -32,12 +34,21 @@ botonAcorde.addEventListener("click", () => {
 
 })
 
+
+botonAyuda.addEventListener("mouseover",()=>{
+  let divAyuda=document.getElementById("ayuda")
+  divAyuda.style.visibility="visible"
+})
+botonAyuda.addEventListener("mouseout",()=>{
+  let divAyuda=document.getElementById("ayuda")
+  divAyuda.style.visibility="hidden"
+})
 let cifrado = false;
 let abriendo = true;
 const boton_abrirCerrar = document.getElementById("ab_cerr");
 const boton_cifrado_activado = document.getElementById("cifrado_activado")
 boton_cifrado_activado.style.opacity = "0.5"
-const boton_cifrado_desact = document.getElementById("cifrado_desactivado")
+
 const divPentagramas = document.getElementById("pentagramas")
 const PentDerecha = document.getElementById("notasDer")
 //let DivOffset=PentDerecha.offsetLeft
@@ -61,21 +72,20 @@ divPentagramas.addEventListener("mouseenter", () => {
 
 boton_cifrado_activado.addEventListener("click", () => {
   borrarNotasPintadas()
-  cifrado = true;
-  boton_cifrado_desact.style.opacity = ".5"
-  boton_cifrado_activado.style.opacity = "1"
+  cifrado=!cifrado;
+  if (cifrado){
+    boton_cifrado_activado.style.opacity = "1"
+  }else{
+    boton_cifrado_activado.style.opacity = "0.5"
+  }
+  
+  
+  
 
 
 })
 
-boton_cifrado_desact.addEventListener("click", () => {
-  borrarNotasPintadas()
-  cifrado = false;
-  boton_cifrado_activado.style.opacity = ".5"
-  boton_cifrado_desact.style.opacity = "1"
 
-
-})
 ContainerTeclados.addEventListener("click",ev=>{
 
   if (ev.target.classList.contains("rojo")){
