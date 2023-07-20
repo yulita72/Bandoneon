@@ -5,18 +5,23 @@ import {
   PosicionesDivManoDerecha,
   soundPaths
 } from "./constantes.js";
+const botonSonido=document.getElementById("sonido");
+let sonido=true;
 const notasIzq = document.getElementById("notasIzq");
 const notasDer = document.getElementById("notasDer");
 const ContainerTeclados = document.getElementById("cont_teclados");
 const DivNotaActual = document.getElementById("div_notaActual");
 const DivManoIzq = document.getElementById("mano_izq");
 const DivManoDer = document.getElementById("mano_der");
-const notasManoIzq = DivManoIzq.querySelectorAll(".nota");
-const notasManoDer = DivManoDer.querySelectorAll(".nota");
+//const notasManoIzq = DivManoIzq.querySelectorAll(".nota");
+//const notasManoDer = DivManoDer.querySelectorAll(".nota");
 const botonAcorde = document.getElementById("acorde");
 const botonAyuda = document.getElementById("boton_ayuda");
-//**********************************cargar sonidos**************************************** */
 
+
+//**********************************cargar sonidos**************************************** */
+botonSonido.addEventListener("click", ()=>{ sonido =!sonido;
+sonido? botonSonido.style.opacity="1": botonSonido.style.opacity="0.5"})
 let audioContext = new AudioContext();
 let soundBuffers = {}; // Almacenar los buffers de sonido precargados
 
@@ -191,7 +196,8 @@ function CapturarNotaDer(ev) {
     let IdNota = encontrarIdDelDivNota(notaSeleccionada, "d");
 
     if (IdNota != "") {
-      playSound(IdNota[IdNota.length-1])
+      if (sonido){playSound(IdNota[IdNota.length-1])}
+      
       document.getElementById(IdNota[0]).classList.add("rojo");
       if (cifrado) {
         let notaEnCifrado = traducir_a_cifrado(IdNota[1]);
@@ -227,7 +233,7 @@ function CapturarNotaIzq(ev) {
     let IdNota = encontrarIdDelDivNota(notaSeleccionada, "i");
     
     if (IdNota != "") {
-      playSound(IdNota[IdNota.length-1])
+      if (sonido){playSound(IdNota[IdNota.length-1])}
 
       if (cifrado) {
         if (IdNota[0] === "i_31" && IdNota[1] === "Mi") {

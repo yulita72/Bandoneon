@@ -20,6 +20,7 @@
     margin: 0 auto;
     min-width: 800px;
     height: 100vh;
+    max-height: 1110px;
     background-color: wheat;
 }
 #cont_teclados{
@@ -172,6 +173,7 @@
     margin-bottom: 5px;
    
 }
+
 
 #i_1{
     left: 38%;
