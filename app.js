@@ -197,7 +197,33 @@ function CapturarNotaDer(ev) {
 
     if (IdNota != "") {
       if (sonido){playSound(IdNota[IdNota.length-1])}
-      
+        /*aca va el de los deos mi de la mano der cerr */
+        if (cifrado) {
+          if (IdNota[0] === "d25" && IdNota[1] === "Mi") {
+            //si la nota es el mi que está dos veces
+            document.getElementById("d25").classList.add("rojo");
+            document.getElementById("d25").innerText = "E";
+            document.getElementById("d14").classList.add("rojo");
+            document.getElementById("d14").innerText = "E";
+            return ; 
+          } else {
+            let notaEnCifrado = traducir_a_cifrado(IdNota[1]);
+            document.getElementById(IdNota[0]).classList.add("rojo");
+            document.getElementById(IdNota[0]).innerText = notaEnCifrado;
+            console.log(IdNota)
+             
+          }
+                
+        }if (IdNota[0] === "d25" && IdNota[1] === "Mi") {
+          //si la nota es el mi que está dos veces
+          document.getElementById("d25").classList.add("rojo");
+          document.getElementById("d25").innerText = "Mi";
+          document.getElementById("d14").classList.add("rojo");
+          document.getElementById("d14").innerText = "Mi";
+          return ; 
+      }    
+
+    
       document.getElementById(IdNota[0]).classList.add("rojo");
       if (cifrado) {
         let notaEnCifrado = traducir_a_cifrado(IdNota[1]);
@@ -248,11 +274,9 @@ function CapturarNotaIzq(ev) {
           document.getElementById(IdNota[0]).classList.add("rojo");
           document.getElementById(IdNota[0]).innerText = notaEnCifrado;
           console.log(IdNota)
-          
-          
-         
-          
+           
         }
+
       } else {
         if (IdNota[0] === "i_31" && IdNota[1] === "Mi") {
           //si la nota es el mi que está dos veces
