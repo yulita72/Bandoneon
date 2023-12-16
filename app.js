@@ -17,6 +17,13 @@ const DivManoDer = document.getElementById("mano_der");
 //const notasManoDer = DivManoDer.querySelectorAll(".nota");
 const botonAcorde = document.getElementById("acorde");
 const botonAyuda = document.getElementById("boton_ayuda");
+const linkDescarga= document.getElementById("publBandoapp")
+
+linkDescarga.addEventListener('click', ()=>{
+  window.location.href = "https://play.google.com/store/apps/details?id=com.yulita72.bandoapp";
+
+})
+
 
 
 //**********************************cargar sonidos**************************************** */
@@ -117,6 +124,8 @@ boton_cifrado_activado.style.opacity = "0.5";
 
 const divPentagramas = document.getElementById("pentagramas");
 const PentDerecha = document.getElementById("notasDer");
+
+
 //let DivOffset=PentDerecha.offsetLeft
 
 //capturar ancho de pentagrama para usarlo en el calculo de pixeles

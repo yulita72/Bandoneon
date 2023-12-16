@@ -9,7 +9,9 @@
 #div_notaActual{
     text-align: center;
     height: 18px;
-    color: white;
+    color: red;
+    width: 30px;
+    background-color: WHITE;
 
 }
 #container_principal{
@@ -18,12 +20,12 @@
    flex-direction: column;
    justify-content: space-between;
    align-items: center;
-   width: 90%;
+   width: 100%;
     margin: 0 auto;
     min-width: 800px;
-    height: 100vh;
+    height: 110vh;
     max-height: 1110px;
-    background-color:#345177;
+    background-color:#57b7ad
 }
 #cont_teclados{
     display: flex;
@@ -70,23 +72,21 @@
 }
 
 #publBandoapp{
-    padding: 20;
+    cursor:pointer;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 180px;
     height: 400px;
     
     background-color: rgb(152, 199, 214);
     text-align: center;
     justify-content: center;
     align-items: center;
-    
     position: absolute;
-    left: 120px;
-    top:10%
-
- 
-
+    left: 20px;
+    top: 50%;
+    
 }
 #playStoreLogo{
     background-image: url("/imagenes/playStoreLogo.png");
@@ -140,7 +140,15 @@
 
 }
 
-
+#ayuda{
+    position: absolute;
+    padding: 20PX;
+    
+    left:30%;
+    top:50%;
+    background-color: white;
+    
+}
 #nota_no_encontrada{
     position: absolute;
     left: 45%;
@@ -214,10 +222,13 @@
 }
 
 #pentagramas{
+    display: flex;
+    flex-direction: column;
     width: 55%;
     min-width: 650px;
     height: auto;
     margin-bottom: 5px;
+    align-items: center;
    
 }
 
@@ -565,6 +576,38 @@ top: 23%;
 }
   
 
+}
+@media screen and (max-width: 1200px) {
+    #publBandoapp{
+       
+        flex-direction: row;
+        width: 400px;
+        height: 150px;
+        margin-bottom: 10px;
+       
+        position:inherit;
+        
+        
+    }
+    #logo{
+       
+        width:120px;
+        height: 90px;
+        
+       
+
+    }
+
+
+
+    .nota{
+        width: 30px;
+        height: 30px;
+    }    
+        
+    #container_principal {
+        width: 100%;
+    }
 }
 
 
