@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bandoneon</title>
-    <link rel="stylesheet" href="/estilos.css" />
-  </head>
 
-  <body>
-    
-    <div id="container_principal">
-      
-      
-      <h2 id="nota_no_encontrada"></h1>
-        
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bandoapp web</title>
+  <link rel="stylesheet" href="/estilos.css" />
+</head>
+
+<body>
+
+  <div id="container_principal">
+
+
+    <h2 id="nota_no_encontrada">
+      </h1>
+
       <div id="cont_teclados">
         <div id="mano_izq">
           <h3>mano izq</h3>
@@ -108,28 +110,42 @@
           <div id="d38" class="nota"></div>
         </div>
       </div>
-      
+
+
+      <div id="publBandoapp">
+        <h2>Bandoapp</h3>
+          <h3>disponible en play store</h3>
+          <div id="playStoreLogo"></div>
+          <div id="logo">
+            
+          </div>
+
+
+
+      </div>
+
       <div id="cont_button">
-      
+
         <div id="cont_botones_cifrado">
           <button id="boton_ayuda">?</button>
           <button id="acorde">Acorde</button>
           <button id="cifrado_activado">Cifrado Americano</button>
-          <button id ="sonido">Sonidos</button>  
+          <button id="sonido">Sonidos</button>
         </div>
-        
+
         <button id="ab_cerr">Abriendo</button>
-        
+
       </div>
       <div id="ayuda" style="visibility:hidden;">Use el modo acorde para mostrar varias notas a la vez.
-      Click sobre una tecla para borrarla</div>
+        Click sobre una tecla para borrarla</div>
       <div id="pentagramas">
         <div id="notasDer"></div>
-        <div id="div_notaActual"></div> 
+        <div id="div_notaActual"></div>
 
         <div id="notasIzq"></div>
       </div>
-    </div>
-  </body>
-  <script src="./app.js" type="module"></script>
+  </div>
+</body>
+<script src="./app.js" type="module"></script>
+
 </html>

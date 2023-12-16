@@ -9,9 +9,11 @@
 #div_notaActual{
     text-align: center;
     height: 18px;
+    color: white;
 
 }
 #container_principal{
+    padding-top: 20px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -21,7 +23,7 @@
     min-width: 800px;
     height: 100vh;
     max-height: 1110px;
-    background-color:#c3b9c2;
+    background-color:#345177;
 }
 #cont_teclados{
     display: flex;
@@ -42,10 +44,11 @@
     padding-bottom: 50%;
    
     position: relative;
-    background-image: url(/imagenes/izqconborde.png);
+    background-image: url(/imagenes/g266.png);
     background-size:contain;
     background-position-x: 80%;
     background-repeat: no-repeat;
+    
 
 
 
@@ -57,7 +60,7 @@
     padding-bottom: 50%;
 
     position: relative;
-    background-image: url(/imagenes/der\ \ con\ borde.png);
+    background-image: url(/imagenes/g48.png);
    
     background-size: contain;
     background-position-x: 20%;
@@ -66,7 +69,51 @@
  
 }
 
+#publBandoapp{
+    padding: 20;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+    
+    background-color: rgb(152, 199, 214);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    left: 120px;
+    top:10%
 
+ 
+
+}
+#playStoreLogo{
+    background-image: url("/imagenes/playStoreLogo.png");
+    background-size: contain;
+    width:20%;
+    height: 20%;
+    background-repeat: no-repeat;
+
+
+
+
+}
+#logo{
+    background-image: url("/imagenes/logo.png");
+    background-size: contain;
+    border-color: black;
+    width:150px;
+    height: 150px;
+    
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 10px;
+   
+    
+  
+
+}
 
 .nota{
     display: flex;
