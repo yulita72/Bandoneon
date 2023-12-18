@@ -165,9 +165,12 @@ boton_abrirCerrar.addEventListener("click", () => {
 
   abriendo = !abriendo;
   if (abriendo) {
-    boton_abrirCerrar.innerText = "Abriendo";
+    boton_abrirCerrar.classList.remove("cerrando")
+    boton_abrirCerrar.classList.add("abriendo")
   } else {
-    boton_abrirCerrar.innerText = "Cerrando";
+    boton_abrirCerrar.classList.remove("abriendo")
+    boton_abrirCerrar.classList.add("cerrando")
+
   }
 });
 //muestra el nombre de la nota por donde pasa el mouse

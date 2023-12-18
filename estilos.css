@@ -71,6 +71,18 @@
  
 }
 
+.abriendo{background-image: url(./imagenes/g140.png);
+    background-size: 75% 90%; 
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.cerrando{background-image: url(./imagenes/g141.png);
+    background-size: 70% 90%; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 #publBandoapp{
     cursor:pointer;
     padding: 20px;
@@ -78,8 +90,8 @@
     flex-direction: column;
     width: 180px;
     height: 400px;
-    
-    background-color: rgb(152, 199, 214);
+    color: white;
+    background-color:rgb(51 118 139);
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -184,12 +196,12 @@
 }
 
 #ab_cerr{
-    background-color: beige;
+   
     margin: 0 auto;
     width: 150px;
     height: 50px;
     border-radius: 10px;
-    font-weight: bolder;
+    
 
 
 }
