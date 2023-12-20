@@ -20,11 +20,36 @@ const botonAyuda = document.getElementById("boton_ayuda");
 const linkDescarga= document.getElementById("publBandoapp")
 
 linkDescarga.addEventListener('click', ()=>{
-  window.location.href = "https://play.google.com/store/apps/details?id=com.yulita72.bandoapp";
+  window.location.href = "https://play.google.com/store/apps/details?id=com.yulita72.bandoappLite";
 
 })
 
+//**************************carroussel****************************//
+var imagenes = [
+  './imagenes/img1.png',
+  './imagenes/img2.png',
+  './imagenes/img3.png',
+  './imagenes/img4.png',
+  './imagenes/img5.png',
+  './imagenes/img6.png',
+  './imagenes/img7.png',
+  './imagenes/img8.png',
+ 
+];
 
+var index = 0;
+var carroussel = document.getElementById('carroussel');
+
+function cambiarImagen() {
+  carroussel.style.backgroundImage = 'url(' + imagenes[index] + ')';
+  index = (index + 1) % imagenes.length;
+}
+
+// Cambiar imagen cada 3 segundos (3000 milisegundos)
+setInterval(cambiarImagen, 8000);
+
+
+//******************************************************************//
 
 //**********************************cargar sonidos**************************************** */
 botonSonido.addEventListener("click", ()=>{ sonido =!sonido;
@@ -92,7 +117,7 @@ notasIzq.addEventListener("mousemove", MostrarNotaIzq); //muestra el nombre de l
 let modoAcorde = false;
 botonAcorde.style.opacity = ".5";
 botonAcorde.addEventListener("click", () => {
-  modoAcorde = !modoAcorde;
+ // modoAcorde = !modoAcorde;
   if (modoAcorde) {
     botonAcorde.style.opacity = "1";
   } else {
@@ -107,12 +132,12 @@ botonAcorde.addEventListener("click", () => {
   }
 });
 
-botonAyuda.addEventListener("mouseover", () => {
+botonAcorde.addEventListener("mouseover", () => {
   let divAyuda = document.getElementById("ayuda");
   divAyuda.style.visibility = "visible";
   
 });
-botonAyuda.addEventListener("mouseout", () => {
+botonAcorde.addEventListener("mouseout", () => {
   let divAyuda = document.getElementById("ayuda");
   divAyuda.style.visibility = "hidden";
 });
@@ -378,7 +403,7 @@ function encontrarIdDelDivNota(nota, izq_der) {
 }
 function No_disponible() {
   let noDisponibleH1 = document.getElementById("nota_no_encontrada");
-  noDisponibleH1.innerText = "Nota no disponible";
+  noDisponibleH1.innerText = "Nota no disponible ";
   setTimeout(() => {
     noDisponibleH1.innerText = "";
   }, 1000);

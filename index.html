@@ -29,7 +29,7 @@
 
       <div id="cont_teclados">
         <div id="mano_izq">
-          <h3>mano izq</h3>
+          <h3>Mano izq</h3>
           <div id="i_1" class="nota"></div>
           <div id="i_2" class="nota"></div>
 
@@ -73,7 +73,7 @@
           <div id="i_33" class="nota"></div>
         </div>
         <div id="mano_der">
-          <h3>mano der</h3>
+          <h3>Mano der</h3>
           <div id="d1" class="nota"></div>
           <div id="d2" class="nota"></div>
 
@@ -122,13 +122,32 @@
         </div>
       </div>
 
+      <aside id="info">
+        <div id="textoInfo">
+          <h2>Bandoapp</h2>
+          <h3>Es una app pensada para estudiantes de bandoneon.<br>
+          Simplememte pulse una nota en el pentagrama y se mostrará la tecla correspondiente acompañada del sonido de la nota.
+          Use el botón central para alternar entre abriendo y cerrando.<br>
+          La versíon de pago para Android incluye el "Modo Acorde", muy útil para mostrar varias notas a la vez , así como la 
+          opcion de mostrar todas las notas del teclado.<br>Tambien puede presionar directamente sobre una tecla y se motrará su nombre.<br>
+          La interfase es totalmente configurable en cuanto a colores y tamaño de las teclas.
+          También existe una version gratuita  con algo menos de funcionalidad pero igualmente útil.
+  
+          </h3>
+          
+        </div>
+      
+        <div id="carroussel"></div>
+       
+      </aside>
+
 
      
 
       <div id="cont_button">
 
         <div id="cont_botones_cifrado">
-          <button id="boton_ayuda">?</button>
+         
           <button id="acorde">Acorde</button>
           <button id="cifrado_activado">Cifrado Americano</button>
           <button id="sonido">Sonidos</button>
@@ -137,8 +156,11 @@
         <button id="ab_cerr" class="abriendo"></button>
 
       </div>
-      <div id="ayuda" style="visibility:hidden;">Use el modo acorde para mostrar varias notas a la vez.
-        Click sobre una tecla para deseleccionarla</div>
+      <div id="ayuda" style="visibility:hidden;"><h3>
+        Use el modo acorde para mostrar varias notas a la vez.
+        Solo disponible en Bandoapp para movil version completa</h3>
+        <div id="ayudaImg"></div>
+      </div>
       <div id="pentagramas">
         <div id="notasDer"></div>
         <div id="div_notaActual"></div>
