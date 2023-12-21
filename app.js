@@ -24,32 +24,9 @@ linkDescarga.addEventListener('click', ()=>{
 
 })
 
-//**************************carroussel****************************//
-var imagenes = [
-  './imagenes/img1.png',
-  './imagenes/img2.png',
-  './imagenes/img3.png',
-  './imagenes/img4.png',
-  './imagenes/img5.png',
-  './imagenes/img6.png',
-  './imagenes/img7.png',
-  './imagenes/img8.png',
- 
-];
-
-var index = 0;
-var carroussel = document.getElementById('carroussel');
-
-function cambiarImagen() {
-  carroussel.style.backgroundImage = 'url(' + imagenes[index] + ')';
-  index = (index + 1) % imagenes.length;
-}
-
-// Cambiar imagen cada 3 segundos (3000 milisegundos)
-setInterval(cambiarImagen, 8000);
 
 
-//******************************************************************//
+
 
 //**********************************cargar sonidos**************************************** */
 botonSonido.addEventListener("click", ()=>{ sonido =!sonido;
